@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row" style="margin-top: 2%;">
+        <div class="col-md-10 col-md-offset-1">
+            <h3 *ngIf="appName">{{appName|async}}</h3>
+            <div class="form-inline">
+                <label for="txtServerName">Server name</label>
+                <input type="text" class="form-control" id="txtServerName" placeholder="server name" #serverName>
+                <button type="button" class="btn btn-default" (click)="onAddServer(serverName)">Add Server</button>
+                <button type="button" class="btn btn-primary" (click)="onSaveServer()">Save Server</button>
+                <button type="button" class="btn btn-success" (click)="onGetServers()">Get Servers from DB</button>
+            </div>
+            <hr/>
+            <ul class="list-group list-group-flush" *ngFor="let server of serversList">
+                <li class="list-group-item list-group-item-info">{{server.name}} (ID: {{server.id}})</li>
+            </ul>
+        </div>
+    </div>
+</div>
