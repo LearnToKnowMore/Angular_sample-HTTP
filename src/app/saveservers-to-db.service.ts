@@ -9,11 +9,11 @@ export class SaveserversToDbService {
 
   constructor(private http: Http) { }
   saveServersToDB(servers: Servers[]) {
-    return this.http.put('https://ng-samplehttp.firebaseio.com/servers.json', servers);
+    return this.http.put('https://ng-samplehttp.firebaseio.com/SomeDataABC.json', servers);
   }
 
   getServersFromDB() {
-    return this.http.get('https://ng-samplehttp.firebaseio.com/servers.json').map(
+    return this.http.get('https://ng-samplehttp.firebaseio.com/SomeDataABC.json').map(
       (response: Response) => {
         const data = response.json();
         return data;
@@ -21,7 +21,7 @@ export class SaveserversToDbService {
   }
 
   getAppName() {
-    return this.http.get('https://ng-samplehttp.firebaseio.com/asyncPipeValue.json').map(
+    return this.http.get('https://ng-samplehttp.firebaseio.com/SomeDataXYZ.json').map(
       (response: Response) => {
         return response.json();
       }
